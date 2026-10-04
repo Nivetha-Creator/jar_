@@ -1,0 +1,939 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --pink: #f7b6c8;
+    --dark-pink: #d87998;
+    --cream: #fffaf4;
+    --brown: #70575a;
+    --light-pink: #ffe8ef;
+    --lavender: #eee8ff;
+    --green: #b9d8bd;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--brown);
+
+    background:
+        radial-gradient(circle at 15% 20%, #fff0f5 0 80px, transparent 81px),
+        radial-gradient(circle at 85% 15%, #eee8ff 0 100px, transparent 101px),
+        linear-gradient(135deg, #fffaf4, #fff4f7);
+
+    overflow-x: hidden;
+}
+
+
+/* ---------------- HEADER ---------------- */
+
+.app {
+    width: min(100%, 900px);
+    margin: auto;
+    padding: 35px 20px 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(120, 70, 80, 0.08);
+
+    transform: rotate(-4deg);
+}
+
+.header h1 {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    color: #62494d;
+}
+
+.header p {
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: #a18488;
+}
+
+
+/* ---------------- JAR ---------------- */
+
+.jar-section {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jar-container {
+    position: relative;
+
+    width: 290px;
+    height: 400px;
+
+    margin: 15px auto 0;
+}
+
+.jar {
+    position: absolute;
+
+    bottom: 20px;
+    left: 30px;
+
+    width: 230px;
+    height: 310px;
+
+    overflow: hidden;
+
+    border: 5px solid rgba(255, 255, 255, 0.85);
+
+    border-radius:
+        35px
+        35px
+        65px
+        65px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.55),
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.4)
+        );
+
+    box-shadow:
+        inset 12px 0 20px rgba(255,255,255,.4),
+        inset -10px 0 15px rgba(190,140,150,.08),
+        0 20px 45px rgba(120,70,80,.15);
+
+    backdrop-filter: blur(4px);
+
+    transition: .5s ease;
+}
+
+
+/* jar shine */
+
+.jar::before {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    top: 30px;
+
+    width: 12px;
+    height: 150px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.55);
+
+    transform: rotate(4deg);
+
+    z-index: 10;
+}
+
+
+/* jar lid */
+
+.jar-lid {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 48px;
+    left: 38px;
+
+    width: 215px;
+    height: 28px;
+
+    border-radius: 15px;
+
+    background: #f5b8ca;
+
+    box-shadow:
+        0 5px 0 #d98ca5,
+        0 8px 15px rgba(100,50,70,.12);
+}
+
+
+/* straw */
+
+.straw {
+    position: absolute;
+
+    z-index: 21;
+
+    top: -5px;
+    right: 66px;
+
+    width: 17px;
+    height: 90px;
+
+    border-radius: 10px;
+
+    background: #d9b8ef;
+
+    transform: rotate(8deg);
+
+    box-shadow:
+        inset 4px 0 rgba(255,255,255,.4);
+}
+
+
+/* jar label */
+
+.jar-label {
+    position: absolute;
+
+    z-index: 30;
+
+    bottom: 75px;
+    left: 75px;
+
+    width: 140px;
+    padding: 9px;
+
+    border-radius: 15px;
+
+    background: rgba(255,248,244,.8);
+
+    border: 2px dashed #e4a9b9;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 17px;
+
+    display: flex;
+    justify-content: space-around;
+
+    transform: rotate(-2deg);
+}
+
+
+/* face */
+
+.jar-face {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 100px;
+    left: 82px;
+
+    width: 70px;
+}
+
+.eye {
+    position: absolute;
+
+    width: 7px;
+    height: 10px;
+
+    background: #6e5558;
+
+    border-radius: 50%;
+}
+
+.left-eye {
+    left: 0;
+}
+
+.right-eye {
+    right: 0;
+}
+
+.mouth {
+    display: block;
+
+    margin: 12px auto 0;
+
+    width: 15px;
+
+    font-size: 20px;
+
+    text-align: center;
+}
+
+
+/* ---------------- BOBA ---------------- */
+
+.boba-container {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 130px;
+
+    z-index: 5;
+}
+
+.boba {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #7d6061;
+
+    box-shadow:
+        inset 5px 4px 0 rgba(255,255,255,.13),
+        0 2px 4px rgba(80,50,50,.2);
+
+    animation: bobaFloat 3s ease-in-out infinite;
+}
+
+.b1 { left: 30px; bottom: 10px; }
+.b2 { left: 65px; bottom: 25px; }
+.b3 { left: 105px; bottom: 5px; }
+.b4 { left: 145px; bottom: 20px; }
+.b5 { left: 180px; bottom: 8px; }
+.b6 { left: 50px; bottom: 65px; }
+.b7 { left: 95px; bottom: 80px; }
+.b8 { left: 140px; bottom: 65px; }
+.b9 { left: 180px; bottom: 55px; }
+.b10 { left: 120px; bottom: 110px; }
+
+@keyframes bobaFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* ---------------- PAPER ---------------- */
+
+.paper-container {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 15;
+
+    pointer-events: none;
+}
+
+.crumpled-paper {
+    position: absolute;
+
+    width: 24px;
+    height: 20px;
+
+    border-radius: 5px;
+
+    background: #fff2a8;
+
+    box-shadow:
+        1px 2px 3px rgba(80,50,50,.15);
+
+    animation: paperDrop .7s ease forwards;
+}
+
+@keyframes paperDrop {
+
+    0% {
+        transform:
+            translate(-120px,-180px)
+            rotate(-90deg)
+            scale(1.4);
+
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(var(--x),var(--y))
+            rotate(var(--rotation))
+            scale(.85);
+
+        opacity: 1;
+    }
+}
+
+
+/* ---------------- COUNTER ---------------- */
+
+.counter {
+    margin: 12px 0 20px;
+
+    display: flex;
+
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: #9b7c81;
+}
+
+.counter span:first-child {
+    display: grid;
+
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #ffe2eb;
+
+    color: #c16c89;
+
+    font-weight: 600;
+}
+
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+    font-family: inherit;
+
+    cursor: pointer;
+
+    border: none;
+}
+
+.primary-button {
+    padding: 13px 23px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background: #dc8da7;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 18px rgba(200,110,140,.2);
+
+    transition: .25s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    background: #ce7895;
+}
+
+.primary-button:active {
+    transform: scale(.96);
+}
+
+
+/* ---------------- FULL JAR ---------------- */
+
+.empty-section {
+    text-align: center;
+
+    margin: 45px auto 0;
+
+    max-width: 450px;
+}
+
+.full-message {
+    position: relative;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.65);
+
+    border: 2px dashed #e8c3cd;
+}
+
+.tiny-star {
+    position: absolute;
+
+    top: -15px;
+    right: 30px;
+
+    color: #d8a8e8;
+
+    font-size: 25px;
+}
+
+.full-message h2 {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 32px;
+}
+
+.full-message p {
+    margin: 8px 0 18px;
+
+    line-height: 1.6;
+
+    color: #9a7c81;
+}
+
+.trash-button {
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    background: #c4d9c7;
+
+    color: #536956;
+
+    font-weight: 600;
+
+    transition: .25s ease;
+}
+
+.trash-button:hover {
+    transform: translateY(-3px);
+
+    background: #afd0b4;
+}
+
+
+/* ---------------- AFTERCARE ---------------- */
+
+.aftercare {
+    max-width: 500px;
+
+    margin: 45px auto;
+
+    text-align: center;
+}
+
+.aftercare-card {
+    padding: 30px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.7);
+
+    box-shadow:
+        0 15px 40px rgba(120,80,90,.08);
+}
+
+.flower {
+    font-size: 35px;
+}
+
+.aftercare h2 {
+    margin-top: 5px;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 34px;
+}
+
+.aftercare p {
+    margin: 8px 0 20px;
+
+    color: #9a7c81;
+
+    line-height: 1.6;
+}
+
+.aftercare-options {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.after-option {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 12px 14px;
+
+    border-radius: 18px;
+
+    background: #fff6f8;
+
+    color: #806368;
+
+    transition: .25s ease;
+}
+
+.after-option:hover {
+    transform: translateY(-4px);
+
+    background: #ffe9ef;
+}
+
+.after-option span {
+    font-size: 11px;
+}
+
+.aftercare-message {
+    min-height: 25px;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 20px;
+
+    color: #c16c89 !important;
+}
+
+
+/* ---------------- MODAL ---------------- */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(75,50,60,.25);
+
+    backdrop-filter: blur(5px);
+}
+
+.paper-modal {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(90%, 500px);
+
+    padding: 30px;
+
+    background: #fff6c8;
+
+    border-radius: 4px;
+
+    transform: rotate(-1deg);
+
+    box-shadow:
+        0 25px 70px rgba(50,30,40,.2);
+
+    animation: paperAppear .3s ease;
+}
+
+@keyframes paperAppear {
+
+    from {
+        transform: scale(.8) rotate(-5deg);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(-1deg);
+
+        opacity: 1;
+    }
+}
+
+.paper-holes {
+    position: absolute;
+
+    top: 20px;
+    left: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 55px;
+}
+
+.paper-holes span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #e7d998;
+}
+
+.close-button {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    color: #927f51;
+}
+
+.paper-content {
+    text-align: center;
+
+    padding: 10px 20px;
+}
+
+.paper-icon {
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.paper-content h2 {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 28px;
+
+    color: #6d5940;
+}
+
+.paper-content p {
+    margin: 7px 0 18px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #9a825c;
+}
+
+textarea {
+    width: 100%;
+
+    min-height: 130px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    border: none;
+
+    outline: none;
+
+    border-bottom: 2px dashed #d8c888;
+
+    background: transparent;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 20px;
+
+    color: #69563e;
+}
+
+textarea::placeholder {
+    color: #b8a779;
+}
+
+.character-count {
+    text-align: right;
+
+    margin: 5px 0 15px;
+
+    font-size: 11px;
+
+    color: #a7966d;
+}
+
+.crush-button {
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    background: #d997ae;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: .25s ease;
+}
+
+.crush-button:hover {
+    transform: translateY(-2px);
+
+    background: #c9829c;
+}
+
+
+/* ---------------- CRUSH ANIMATION ---------------- */
+
+.crushing {
+    animation: crushPaper .9s ease forwards;
+}
+
+@keyframes crushPaper {
+
+    0% {
+        transform: scale(1) rotate(0);
+    }
+
+    30% {
+        transform: scale(.9) rotate(15deg);
+    }
+
+    60% {
+        transform: scale(.65) rotate(-20deg);
+    }
+
+    100% {
+        transform:
+            scale(.25)
+            rotate(90deg)
+            translateY(300px);
+
+        opacity: 0;
+    }
+}
+
+
+/* ---------------- TOAST ---------------- */
+
+.toast {
+    position: fixed;
+
+    bottom: 25px;
+    left: 50%;
+
+    z-index: 200;
+
+    transform:
+        translate(-50%, 100px);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    border-radius: 25px;
+
+    background: #6e565b;
+
+    color: white;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 10px 30px rgba(60,40,40,.2);
+
+    transition: .4s ease;
+}
+
+.toast.show {
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    text-align: center;
+
+    margin: 55px 0 15px;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 15px;
+
+    color: #b29398;
+}
+
+
+/* ---------------- UTILITIES ---------------- */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding-top: 25px;
+    }
+
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .jar-container {
+        transform: scale(.9);
+
+        margin-top: -5px;
+    }
+
+    .paper-modal {
+        padding: 22px 15px;
+    }
+
+    .paper-content {
+        padding: 5px 15px;
+    }
+
+    .aftercare-options {
+        gap: 6px;
+    }
+}
