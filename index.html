@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feelings Jar 🧋</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="sparkles"></div>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">🧋</div>
+
+            <div>
+                <h1>Feelings Jar</h1>
+                <p>You don't have to carry it. Put it here.</p>
+            </div>
+        </header>
+
+
+        <!-- MAIN JAR AREA -->
+        <section class="jar-section">
+
+            <div class="jar-container">
+
+                <div class="jar-lid"></div>
+
+                <div class="straw"></div>
+
+                <div class="jar">
+
+                    <div class="jar-face">
+                        <span class="eye left-eye"></span>
+                        <span class="eye right-eye"></span>
+
+                        <span class="mouth">⌣</span>
+                    </div>
+
+                    <div id="paperContainer" class="paper-container"></div>
+
+                    <div class="boba-container">
+
+                        <span class="boba b1"></span>
+                        <span class="boba b2"></span>
+                        <span class="boba b3"></span>
+                        <span class="boba b4"></span>
+                        <span class="boba b5"></span>
+                        <span class="boba b6"></span>
+                        <span class="boba b7"></span>
+                        <span class="boba b8"></span>
+                        <span class="boba b9"></span>
+                        <span class="boba b10"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="jar-label">
+                    <span>♡</span>
+                    <strong>feelings</strong>
+                    <span>♡</span>
+                </div>
+
+            </div>
+
+
+            <!-- COUNTER -->
+            <div class="counter">
+
+                <span id="feelingCount">0</span>
+
+                <span>
+                    little things
+                    you've left here
+                </span>
+
+            </div>
+
+
+            <!-- WRITE BUTTON -->
+            <button id="writeButton" class="primary-button">
+                ✎ &nbsp; Write something
+            </button>
+
+        </section>
+
+
+        <!-- EMPTY JAR -->
+        <section id="emptySection" class="empty-section hidden">
+
+            <div class="full-message">
+                <span class="tiny-star">✦</span>
+
+                <h2>Your jar is full.</h2>
+
+                <p>
+                    You've been carrying a lot.
+                    <br>
+                    Maybe it's time to let some of it go.
+                </p>
+
+                <button id="emptyButton" class="trash-button">
+                    🗑️ &nbsp; Empty the jar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- AFTERCARE -->
+        <section id="aftercare" class="aftercare hidden">
+
+            <div class="aftercare-card">
+
+                <span class="flower">🌷</span>
+
+                <h2>A little lighter.</h2>
+
+                <p>
+                    You made some room inside.
+                    <br>
+                    That's enough for today.
+                </p>
+
+                <div class="aftercare-options">
+
+                    <button class="after-option" data-message="You deserve gentleness too. 🌷">
+                        🌱
+                        <span>A little kindness</span>
+                    </button>
+
+                    <button class="after-option" data-message="There are still little things worth looking forward to. ☀️">
+                        ☀️
+                        <span>A little hope</span>
+                    </button>
+
+                    <button class="after-option" data-message="Rest is not something you have to earn. 🌙">
+                        🌙
+                        <span>A little rest</span>
+                    </button>
+
+                </div>
+
+                <p id="aftercareMessage" class="aftercare-message"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <span>made with a little softness ♡</span>
+        </footer>
+
+    </main>
+
+
+    <!-- WRITE MODAL -->
+    <div id="modal" class="modal hidden">
+
+        <div class="modal-overlay"></div>
+
+        <div class="paper-modal">
+
+            <button id="closeModal" class="close-button">
+                ×
+            </button>
+
+            <div class="paper-holes">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="paper-content">
+
+                <div class="paper-icon">
+                    💌
+                </div>
+
+                <h2>What do you want to let go of?</h2>
+
+                <p>
+                    You don't have to make it sound pretty.
+                    <br>
+                    Just write it down.
+                </p>
+
+                <textarea
+                    id="feelingInput"
+                    maxlength="200"
+                    placeholder="Today, I felt..."
+                ></textarea>
+
+                <div class="character-count">
+                    <span id="characterCount">0</span>/200
+                </div>
+
+                <button id="crushButton" class="crush-button">
+                    ✨ Crush it
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+        <span>💗</span>
+        <span id="toastMessage">It's okay to let it go.</span>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
